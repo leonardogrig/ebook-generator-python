@@ -1,10 +1,10 @@
 import openai
 import os
+from dotenv import load_dotenv
 
-# Replace with your OpenAI API key
-API_KEY = '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'
+API_KEY =  os.getenv("OPENAI_API")
 
-# Initialize OpenAI API
+load_dotenv()
 openai.api_key = API_KEY
 
 
@@ -22,7 +22,7 @@ def generate_header(prompt):
 
 
 def main():
-    # Get user inputs
+    
     ebook_theme = input("Enter the ebook theme: ")
     tone = input("Enter the tone: ")
     num_headers = int(input("Enter the number of headers: "))
